@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid pagebg">
     <form class="center">
       <div class="card cardbg">
         
@@ -72,6 +72,7 @@ export default {
     justify-content: center;
     padding: 5%;
     position: relative;
+    color: #000000;
 }
 .logo {
     /* Size */
@@ -113,6 +114,9 @@ export default {
   position: relative;
   width: 400px;
   box-shadow: 10px 11px 10px 2px #D8D9CF;
+}
+.pagebg {
+  color: #ce2c2c;
 }
 
 </style>
