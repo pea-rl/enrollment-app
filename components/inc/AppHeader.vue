@@ -1,4 +1,4 @@
-<template>
+<template class="body">
   <div>
   <nav class="nav navbar navbar-expand-lg">
   <div class="container-fluid">
@@ -14,9 +14,6 @@
         </li>
         <li class="nav-item">
           <NuxtLink to="/dashboard" class="nav-link">Dashboard</NuxtLink>
-        </li>
-        <li class="nav-item">
-          <NuxtLink to="/login" class="nav-link">Login</NuxtLink>
         </li>
       </ul>
     </div>
@@ -34,25 +31,35 @@ export default {
 
 <style>
 .nav {
-  background-color: #FF9F29;
+  background: #FEC261;;
   height: 70px;
   align-items: center;
   width: 100%;
+  left: 0px;
+  top: 0px;
+  box-shadow: inset 10px 15px 25px 5px rgba(217, 148, 38, 0.5);
+  
 }
 .navbrand {
   font-weight: 700;
   align-items: flex-start;
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
-  color: #000000;
+  font-style: normal;
+  line-height: 60px;
+  color: #051E2E;
   margin-right: 50px;
+  text-shadow: 2px 1px 1px rgba(0, 0, 0, 0.25);
 }
 .link {
   font-weight: 700;
   align-items: flex-start;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: large;
-  color: #b1afad;
+  font-size: medium;
+  font-style: normal;
+  line-height: 39px;
+  font-weight: 700;
+  color: #000000;
 }
 .navlinkcollapse {
   color: #000000;

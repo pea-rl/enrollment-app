@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid pagebg">
+  <div class="container-fluid">
     <form class="center">
       <div class="card cardbg">
         
@@ -12,8 +12,6 @@
         </div>
 
         <div class="card-body">
-          <h4 class="center">Login</h4>
-
           <div class="mb-3 form-check">
             <div class="floating-label">
               <input type="email" class="floating-label__input" id="floatingInput" placeholder="Email">
@@ -45,6 +43,7 @@ export default {
       email: '',
       password: ''
     }
+    
   }
 }
 
@@ -53,8 +52,8 @@ export default {
 <style>
 .curved-background__curved {
     /* Background color */
-    background-color: #000000;
-
+    background: #06283D;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 1px 5px 9px rgba(45, 88, 115, 0.5);
     /* You can use gradient background color such as */
     /* background: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%); */
 
@@ -65,6 +64,9 @@ export default {
     /* Size */
     height: 100%;
     width: 100%;
+
+    position: inherit;
+    padding: 5%;
 }
 .center {
     align-items: center;
@@ -76,24 +78,29 @@ export default {
 }
 .logo {
     /* Size */
-    height: 30%;
-    width: 30%;
+    height: 25%;
+    width: 25%;
+    filter: drop-shadow(3px 2px 5px #0F181E);
 }
 .btnLogin {
-  font-weight: 600;
-  border-radius: 8px;
+  font-weight: 700;
+  background: #338476;
+  border-radius: 50px;
   padding: 2%;
   width: 150px;
   height: 40px;
-  border: 1px solid #d1d5db;
+  border: 1px solid #338476;
+  box-shadow: inset 2px 3px 3px rgba(0, 0, 0, 0.25);
 }
 .floating-label {
-  border: 1px solid #d1d5db;
-  border-radius: 0.25rem;
+  border: none;
   position: relative;   
+  margin-top: 10px;
 }
 .floating-label__input {
   border: none;
+  background: rgba(192, 192, 192, 0.51);
+  border-radius: 18px;
   padding: 0.5rem;
   height: 100%;
   width: 100%;
@@ -107,16 +114,21 @@ export default {
   opacity: 0;
   transition: all 200ms;
   padding: 0.5rem;
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 31px;
 }
 
 .cardbg {
-  background-color: #FF9F29;
+  background-color: #FEC261;
   position: relative;
   width: 400px;
-  box-shadow: 10px 11px 10px 2px #D8D9CF;
-}
-.pagebg {
-  color: #ce2c2c;
+  border: #FEC261;
+  box-shadow: inset 10px 15px 25px 5px rgba(217, 148, 38, 0.5);
+  filter: drop-shadow(12px 12px 18px rgba(0, 0, 0, 0.25));
+  margin: 60px;
 }
 
 </style>
