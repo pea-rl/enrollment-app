@@ -1,34 +1,37 @@
 <template>
   <div class="container-fluid">
     <form class="center">
-      <div class="card cardbg">
-        
+      <div class="card cardbg">  
         <div class="curved-background">
           <div class="curved-background__curved">
+<!--Logo-->
             <div class="center">
               <img src="~/static/images/CTUlogo.png" class="logo" />
             </div>
+            
           </div>
         </div>
 
         <div class="card-body">
           <div class="mb-3 form-check">
+<!--Email-->
             <div class="floating-label">
               <input type="email" class="floating-label__input" id="floatingInput" placeholder="Email">
               <label for="floatingInput" class="floating-label__label">Email</label>
             </div>
           </div>
-
+<!--Password-->
           <div class="mb-3 form-check">
             <div class="floating-label">
               <input type="password" class="floating-label__input" id="floatingPassword" placeholder="Password">
               <label for="floatingInput" class="floating-label__label">Password</label>
             </div>
           </div>
-
+<!--Login Button-->
           <div class="center">
             <button type="submit" class="btnLogin">LOGIN</button>
           </div>
+
         </div>
       </div>
   </form>
