@@ -46,7 +46,17 @@ export default {
       email: '',
       password: ''
     }
-    
+  },
+  methods: {
+    onSubmit(event) {
+      event.preventDefault()
+      alert(JSON.stringify(this.form))
+    },
+    onReset(event) {
+      event.preventDefault()
+      this.form.email= ''
+      this.form.password= ''
+    }
   }
 }
 
@@ -131,7 +141,7 @@ export default {
   border: #FEC261;
   box-shadow: inset 10px 15px 25px 5px rgba(217, 148, 38, 0.5);
   filter: drop-shadow(12px 12px 18px rgba(0, 0, 0, 0.25));
-  margin: 60px;
+  margin: 50px;
 }
 
 </style>
