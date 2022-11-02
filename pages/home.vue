@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <h2 class="title">Home Page</h2>
     <div>
       <b-button v-b-toggle.sidebar-right>Menu</b-button>
@@ -20,7 +21,7 @@
       </b-sidebar>
     </div>
 
-    <div class="center">
+    <div class="center"  >
       <div class="card cardhome" style="width: 18rem;">
         <img src="~/static/images/CTUlogo.png" class="card-img-top">
         <div class="card-body">
