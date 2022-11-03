@@ -6,8 +6,8 @@
     <button class="navbar-toggler navlinkcollpase" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <!--div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto link">
         <li class="nav-item">
           <NuxtLink to="/home" class="nav-link">Home</NuxtLink>
@@ -19,8 +19,7 @@
           <NuxtLink to="/student" class="nav-link">Student List</NuxtLink>
         </li>
       </ul>
-    </div>
-    
+    </div-->
   </div>
 </nav>
   </div>

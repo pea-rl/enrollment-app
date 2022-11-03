@@ -1,29 +1,14 @@
 <template>
+  
   <div>
-    
-    <h2 class="title">Home Page</h2>
     <div>
-      <b-button v-b-toggle.sidebar-right>Menu</b-button>
-      <b-sidebar id="sidebar-right" title="Sidebar" right shadow>
-        <div class="px-3 py-2">
-          <ul class="navbar-nav me-auto link">
-            <li class="nav-item">
-              <NuxtLink to="/home" class="nav-link">Home</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/dashboard" class="nav-link">Dashboard</NuxtLink>
-            </li>
-            <li class="nav-item">
-              <NuxtLink to="/student" class="nav-link">Student List</NuxtLink>
-            </li>
-          </ul>
-        </div>
-      </b-sidebar>
+      <Sidebar/>
     </div>
 
+    <h2 class="title">Home Page</h2>
     <div class="center"  >
-      <div class="card cardhome" style="width: 18rem;">
-        <img src="~/static/images/CTUlogo.png" class="card-img-top">
+      <div class="card cardhome">
+        <img src="~/static/images/CTUlogo.png" class="card-img-top" style="width: 50%; height: 50%; align-items: center; padding: 20px;">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -63,7 +48,7 @@ export default {
 .cardhome {
   background-color: #FEC261;
   position: relative;
-  width: 800px;
+  width: 400px;
   border: #FEC261;
   box-shadow: inset 10px 15px 25px 5px rgba(217, 148, 38, 0.5);
   filter: drop-shadow(12px 12px 18px rgba(0, 0, 0, 0.25));
