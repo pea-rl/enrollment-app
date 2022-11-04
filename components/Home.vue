@@ -11,7 +11,6 @@
         <div class="card-body">
           <h5 class="card-title text">Card title</h5>
           <p class="card-text text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <NuxtLink to="/dashboard" class="btn btn-primary">Dashboard</NuxtLink>
         </div>
       </div>
     </div>
@@ -32,6 +31,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .title {
   font-weight: 700;

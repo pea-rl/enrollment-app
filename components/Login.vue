@@ -22,9 +22,12 @@
                 type="email"
                 class="floating-label__input"
                 id="floatingInput"
-                placeholder="Email" required/>
+                placeholder="Email"
+                required
+              />
               <label for="floatingInput" class="floating-label__label">
-                Email</label>
+                Email</label
+              >
             </div>
           </div>
           <!--Password-->
@@ -34,16 +37,22 @@
                 type="password"
                 class="floating-label__input"
                 id="floatingPassword"
-                placeholder="Password" required/>
+                placeholder="Password"
+                required
+              />
               <label for="floatingInput" class="floating-label__label">
-                Password</label>
+                Password</label
+              >
             </div>
           </div>
           <!--Login Button-->
+          <!--Login Button @click="$emit()"-->
           <div class="center">
-            <button type="submit" class="btnLogin" @click="$emit()">
-              LOGIN
-            </button>
+            <NuxtLink to="/home" class="nav-link">
+              <button type="submit" class="btnLogin">
+                LOGIN
+              </button>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -60,7 +69,7 @@ export default {
       password: "",
     };
   },
-  emits: {
+/*  emits: {
     // No validation
     click: null,
 
@@ -73,9 +82,9 @@ export default {
         return false;
       }
     },
-  },
+  },*/
   methods: {
-/*    login() {
+    /*    login() {
       if (this.emailLogin === "" || this.passwordLogin === "") {
             this.emptyFields = true;
          } else {
@@ -86,14 +95,14 @@ export default {
       this.$emit("submit", { email, password });
       alert(JSON.stringify(this.form))
     },*/
-    onreset(event){
-      this.form.email = ''
-      this.form.password = ''
-      this.show = false
-      this.$nextTick(()=>{
-        this.show = true
-      })
-    }
+    onreset(event) {
+      this.form.email = "";
+      this.form.password = "";
+      this.show = false;
+      this.$nextTick(() => {
+        this.show = true;
+      });
+    },
   },
 };
 </script>
@@ -104,6 +113,7 @@ export default {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .title {
   align-content: center;
