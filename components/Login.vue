@@ -1,99 +1,162 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid bodyLogin">
     <form class="center">
-      <div class="card cardbg">  
+      <div class="card cardbg">
         <div class="curved-background">
           <div class="curved-background__curved">
-<!--Logo-->
+            <div class="title">
+              <h1 class="navbrand">CTU Enrollment</h1>
+            </div>
+            <!--Logo-->
             <div class="center">
               <img src="~/static/images/CTUlogo.png" class="logo" />
             </div>
-            
           </div>
         </div>
 
         <div class="card-body">
           <div class="mb-3 form-check">
-<!--Email-->
+            <!--Email-->
             <div class="floating-label">
-              <input type="email" class="floating-label__input" id="floatingInput" placeholder="Email">
-              <label for="floatingInput" class="floating-label__label">Email</label>
+              <input
+                type="email"
+                class="floating-label__input"
+                id="floatingInput"
+                placeholder="Email" required/>
+              <label for="floatingInput" class="floating-label__label">
+                Email</label>
             </div>
           </div>
-<!--Password-->
+          <!--Password-->
           <div class="mb-3 form-check">
             <div class="floating-label">
-              <input type="password" class="floating-label__input" id="floatingPassword" placeholder="Password">
-              <label for="floatingInput" class="floating-label__label">Password</label>
+              <input
+                type="password"
+                class="floating-label__input"
+                id="floatingPassword"
+                placeholder="Password" required/>
+              <label for="floatingInput" class="floating-label__label">
+                Password</label>
             </div>
           </div>
-<!--Login Button-->
+          <!--Login Button-->
           <div class="center">
-            <button type="submit" class="btnLogin">LOGIN</button>
+            <button type="submit" class="btnLogin" @click="$emit()">
+              LOGIN
+            </button>
           </div>
-
         </div>
       </div>
-  </form>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
   //name: 'Login'
-  data( ){
+  data() {
     return {
-      email: '',
-      password: ''
-    }
+      email: "",
+      password: "",
+    };
+  },
+  emits: {
+    // No validation
+    click: null,
+
+    // Validate submit event
+    submit: ({ email, password }) => {
+      if (email && password) {
+        return true;
+      } else {
+        console.warn("Invalid submit event payload!");
+        return false;
+      }
+    },
   },
   methods: {
-    onSubmit(event) {
-      event.preventDefault()
-      alert(JSON.stringify(this.form))
-    },
-    onReset(event) {
-      event.preventDefault()
-      this.form.email= ''
-      this.form.password= ''
+/*    login() {
+      if (this.emailLogin === "" || this.passwordLogin === "") {
+            this.emptyFields = true;
+         } else {
+            alert("You are now logged in");
+         }
     }
-  }
-}
-
+    submitForm(email, password) {
+      this.$emit("submit", { email, password });
+      alert(JSON.stringify(this.form))
+    },*/
+    onreset(event){
+      this.form.email = ''
+      this.form.password = ''
+      this.show = false
+      this.$nextTick(()=>{
+        this.show = true
+      })
+    }
+  },
+};
 </script>
 
 <style>
+.bodyLogin {
+  background-color: #b73e3e;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.title {
+  align-content: center;
+  position: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+}
 .curved-background__curved {
-    /* Background color */
-    background: #06283D;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 1px 5px 9px rgba(45, 88, 115, 0.5);
-    /* You can use gradient background color such as */
-    /* background: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%); */
+  /* Background color */
+  background: #06283d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 1px 5px 9px rgba(45, 88, 115, 0.5);
+  /* You can use gradient background color such as */
+  /* background: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%); */
 
-    /* Curved corners */
-    border-bottom-left-radius: 50% 40%;
-    border-bottom-right-radius: 50% 40%;
+  /* Curved corners */
+  border-bottom-left-radius: 50% 40%;
+  border-bottom-right-radius: 50% 40%;
 
-    /* Size */
-    height: 100%;
-    width: 100%;
+  /* Size */
+  height: 100%;
+  width: 100%;
 
-    position: inherit;
-    padding: 5%;
+  position: inherit;
+  padding: 3%;
+}
+.navbrand {
+  font-weight: 700;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  font-style: normal;
+  line-height: 40px;
+  color: #d8e4e9;
+  text-shadow: 2px 1px 1px rgb(14, 11, 31);
+  margin: 5px;
 }
 .center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    padding: 5%;
-    position: relative;
-    color: #000000;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 3.5%;
+  position: relative;
+  color: #000000;
 }
 .logo {
-    /* Size */
-    height: 25%;
-    width: 25%;
-    filter: drop-shadow(3px 2px 5px #0F181E);
+  /* Size */
+  height: 25%;
+  width: 25%;
+  filter: drop-shadow(3px 2px 5px #0f181e);
 }
 .btnLogin {
   font-weight: 700;
@@ -107,8 +170,8 @@ export default {
 }
 .floating-label {
   border: none;
-  position: relative;   
-  margin-top: 10px;
+  position: relative;
+  margin-top: 8px;
 }
 .floating-label__input {
   border: none;
@@ -135,13 +198,12 @@ export default {
 }
 
 .cardbg {
-  background-color: #FEC261;
+  background-color: #fec261;
   position: relative;
-  width: 400px;
-  border: #FEC261;
+  width: 580px;
+  border: #fec261;
   box-shadow: inset 10px 15px 25px 5px rgba(217, 148, 38, 0.5);
   filter: drop-shadow(12px 12px 18px rgba(0, 0, 0, 0.25));
-  margin: 50px;
+  margin: 10px;
 }
-
 </style>

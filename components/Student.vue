@@ -1,82 +1,148 @@
 <template>
+  <div class="body">
+    <sidebar />
 
-  <div>
     <div class="container">
-      <br>
+      <br />
       <div class="form-inline" action="#">
-        <input type="text" id="form-name" v-model="item.name" placeholder="Name" class="form-control"> 
-        <input type="text" v-model="item.course" placeholder="Course" class="form-control" v-on:keyup.enter="addItem" style="width:360px">
-        <input type="text" v-model="item.year" placeholder="Year" class="form-control" v-on:keyup.enter="addItem" style="width:60px">
-        <input type="text" v-model="item.section" placeholder="Section" class="form-control" v-on:keyup.enter="addItem" style="width:80px">
-        <button @click="addItem"  class="imgbtn"><img src="~/static/images/add.png" class="imgbtn"/></button>
+        <input
+          type="text"
+          id="form-name"
+          v-model="item.name"
+          placeholder="Name"
+          class="form-control"/>
+        <input
+          type="text"
+          v-model="item.course"
+          placeholder="Course"
+          class="form-control"
+          v-on:keyup.enter="addItem"
+          style="width: 360px"/>
+        <input
+          type="text"
+          v-model="item.year"
+          placeholder="Year"
+          class="form-control"
+          v-on:keyup.enter="addItem"
+          style="width: 60px"/>
+        <input
+          type="text"
+          v-model="item.section"
+          placeholder="Section"
+          class="form-control"
+          v-on:keyup.enter="addItem"
+          style="width: 80px"/>
+
+        <button @click="addItem" class="imgbtn">
+          <img src="~/static/images/add.png" class="imgbtn" />
+        </button>
       </div>
-        
-      <br><br>
-      <table class="table table-striped table-bordered table-sm">
+
+      <br /><br />
+      <table class="table table-striped table-bordered table-sm tablerows" style="border: 0px; font-size: 13px;">
         <thead class="thead-light">
-          <th>Name</th>
-          <th>Course</th>
-          <th>Year</th>
-          <th>Section</th>
-          <th class="col-2">Edit/Del</th>
+          <th style="background-color: #06283d; color: #d8e4e9;">Name</th>
+          <th style="background-color: #06283d; color: #d8e4e9;">Course</th>
+          <th style="background-color: #06283d; color: #d8e4e9;">Year</th>
+          <th style="background-color: #06283d; color: #d8e4e9;">Section</th>
+          <th class="col-2" style="background-color: #06283d; color: #d8e4e9;">Edit/Del</th>
         </thead>
         <tr v-for="(item, index) in items" :key="item.name">
           <td>
-            <input v-if="item.edit" type="text" v-model="item.name"  v-on:keyup.enter="item.edit = !item.edit">
-            <span v-else>{{item.name}} </span>
+            <input
+              v-if="item.edit"
+              type="text"
+              v-model="item.name"
+              v-on:keyup.enter="item.edit = !item.edit"/>
+            <span v-else>{{ item.name }} </span>
           </td>
           <td>
-            <input v-if="item.edit" type="text" v-model="item.course" v-on:keyup.enter="item.edit = !item.edit">
-            <span v-else>{{item.course}} </span>
+            <input
+              v-if="item.edit"
+              type="text"
+              v-model="item.course"
+              v-on:keyup.enter="item.edit = !item.edit"/>
+            <span v-else>{{ item.course }} </span>
           </td>
           <td>
-            <input v-if="item.edit" type="text" v-model="item.year" v-on:keyup.enter="item.edit = !item.edit">
-            <span v-else>{{item.year}} </span>
+            <input
+              v-if="item.edit"
+              type="text"
+              v-model="item.year"
+              v-on:keyup.enter="item.edit = !item.edit"/>
+            <span v-else>{{ item.year }} </span>
           </td>
           <td>
-            <input v-if="item.edit" type="text" v-model="item.section" v-on:keyup.enter="item.edit = !item.edit">
-            <span v-else>{{item.section}} </span>
+            <input
+              v-if="item.edit"
+              type="text"
+              v-model="item.section"
+              v-on:keyup.enter="item.edit = !item.edit"/>
+            <span v-else>{{ item.section }} </span>
           </td>
           <td>
-            <button @click="item.edit = !item.edit" class="imgbtn"><img src="~/static/images/edit.png" class="imgbtn"/></button>
-            <button @click="removeItem(index)" class="imgbtn"><img src="~/static/images/delete.png" class="imgbtn"/></button>
+            <button @click="item.edit = !item.edit" class="imgbtn">
+              <img src="~/static/images/edit.png" class="imgbtn" />
+            </button>
+            <button @click="removeItem(index)" class="imgbtn">
+              <img src="~/static/images/delete.png" class="imgbtn" />
+            </button>
           </td>
         </tr>
       </table>
     </div>
   </div>
-  </template> 
-  
-  <script>
-  export default {
-    data: function() {
-      return {
-        item: {name: "", course: "", year: "", section: "", edit: false},
-        items: []
-      }
+</template>
+
+<script>
+import Sidebar from "./inc/Sidebar.vue";
+export default {
+  components: { Sidebar },
+  data: function () {
+    return {
+      item: { name: "", course: "", year: "", section: "", edit: false },
+      items: [],
+    };
+  },
+  methods: {
+    addItem() {
+      this.items.push({
+        name: this.item.name,
+        course: this.item.course,
+        year: this.year,
+        section: this.section,
+        edit: false,
+      });
+      this.item = [];
     },
-    methods:{
-      addItem(){
-        this.items.push({name:this.item.name, course:this.item.course, year:this.year, section:this.section, edit: false})
-        this.item = [];
-        
-      },
-      removeItem(index){
-        this.items.splice(index, 1)
-      }
-    }
-  };
-  </script>
-  
-  <style>
-  .form-inline input {
-    margin-right:8px;
-  }
-  .imgbtn {
-    border:0px; 
-    background-color: transparent;
-    width: 20px; 
-    height: 20px;
-    
-  }
-  </style>
+    removeItem(index) {
+      this.items.splice(index, 1);
+    },
+  },
+};
+</script>
+
+<style>
+.body {
+  background-color: #fec261;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.form-inline input {
+  margin-right: 8px;
+}
+.imgbtn {
+  border: 0px;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+}
+.tablerows {
+  background: rgb(252, 250, 250);
+}
+.tableheader {
+  background-color: #06283d;
+  color: #d8e4e9;
+}
+</style>
