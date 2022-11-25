@@ -23,6 +23,12 @@ export default {
     ],
     build: {
       extractCSS: true
+    },
+    modules: [
+      '@nuxtjs/axios',
+    ],
+    axios: {
+      // proxy: true
     }
   },
 
