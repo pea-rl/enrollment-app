@@ -1,0 +1,17 @@
+{
+  "name": "student_dbapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon stud_app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
+    "koa": "^2.13.4"
+  }
+}

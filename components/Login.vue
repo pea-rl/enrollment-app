@@ -19,9 +19,10 @@
             <!--Email-->
             <div class="floating-label">
               <input
+                v-model="txtEmail"
                 type="email"
                 class="floating-label__input"
-                id="floatingInput"
+                id="Email"
                 placeholder="Email"
                 required
               />
@@ -34,9 +35,10 @@
           <div class="mb-3 form-check">
             <div class="floating-label">
               <input
+                v-model="txtPassword"
                 type="password"
                 class="floating-label__input"
-                id="floatingPassword"
+                id="Password"
                 placeholder="Password"
                 required
               />
@@ -46,10 +48,9 @@
             </div>
           </div>
           <!--Login Button-->
-          <!--Login Button @click="$emit()"-->
           <div class="center">
             <NuxtLink to="/home" class="nav-link">
-              <button type="submit" class="btnLogin">
+              <button @click="loginClck" type="submit" class="btnLogin">
                 LOGIN
               </button>
             </NuxtLink>
@@ -69,41 +70,49 @@ export default {
       password: "",
     };
   },
-/*  emits: {
-    // No validation
-    click: null,
-
-    // Validate submit event
-    submit: ({ email, password }) => {
-      if (email && password) {
-        return true;
-      } else {
-        console.warn("Invalid submit event payload!");
-        return false;
-      }
-    },
-  },*/
   methods: {
-    /*    login() {
-      if (this.emailLogin === "" || this.passwordLogin === "") {
-            this.emptyFields = true;
-         } else {
-            alert("You are now logged in");
-         }
-    }
-    submitForm(email, password) {
-      this.$emit("submit", { email, password });
-      alert(JSON.stringify(this.form))
-    },*/
-    onreset(event) {
-      this.form.email = "";
-      this.form.password = "";
-      this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
+    loginClck() {
+      let mssg = "";
+      let ttl = "";
+      let vrnt = "";
+      if(this.txtEmail == "" || this.txtPasssword == "") {
+        mssg = "Please fill all fields";
+        ttl = "Missing fields";
+        vrnt = "error";
+      }
+      else {
+        mssg = "Email: " + this.txtEmail + "\r\nPassword: " +this.txtPasssword + "\r\nHello!";
+        ttl = "Success";
+        vrnt = "Success";
+        this.ClearField()
+      }
+      this.$bvToast.toast(mssg, {
+        title: ttl,
+        autoHideDelay: 3000,
+        appendToast: false,
+        variant: vrnt
       });
     },
+    ClearField() {
+      this.txtEmail = "";
+      this.txtPassword = "";
+    }
   },
+  computed: {
+    CheckEmail() {
+      if(this.txtEmail.length == 0){
+        return null;
+      }
+      return this.txtEmail.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ? true:false;
+    },
+    CheckPasswrd() {
+      if(this.txtPassword.length == 0)
+      {
+        return null;
+      }
+      return this.txtPassword.length >=8 ? true : false;
+    }
+  }
 };
 </script>
 
