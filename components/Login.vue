@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid bodyLogin">
+  <div class="bodyLogin">
     <form class="center">
       <div class="card cardbg">
         <div class="curved-background">
@@ -110,8 +110,8 @@ export default {
 <style>
 .bodyLogin {
   background-color: #b73e3e;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -155,10 +155,10 @@ export default {
   margin: 5px;
 }
 .center {
-  align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 3.5%;
+  align-items: center;
   position: relative;
   color: #000000;
 }

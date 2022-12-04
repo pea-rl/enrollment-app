@@ -5,14 +5,17 @@
         <h1 class="brand">CTU Enrollment</h1>
       </div>
       <ul class="navbar-nav me-auto link">
-        <li class="nav-item sidenavbtn">
+        <li class="nav-item sidenavbtn" @click="isActive = !isActive">
           <NuxtLink to="/home" class="nav-link">Home</NuxtLink>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" @click="isActive = !isActive">
           <NuxtLink to="/student" class="nav-link">Student List</NuxtLink>
         </li>
-        <li class="nav-item">
-          <NuxtLink to="/login" class="nav-link">Logout</NuxtLink>
+        <li class="nav-item" @click="isActive = !isActive">
+          <NuxtLink to="/cloudstudent" class="nav-link">Cloud Student List</NuxtLink>
+        </li>
+        <li class="nav-item" @click="isActive = !isActive">
+          <NuxtLink to="/" class="nav-link">Logout</NuxtLink>
         </li>
       </ul>
     </div>
@@ -30,8 +33,11 @@ export default {
   data() {
     return {
       isActive: false,
-    };
+    }
   },
+  methods: {
+
+  }
 };
 </script>
 
@@ -102,6 +108,7 @@ export default {
 #main {
   transition: margin-left 0.5s;
   padding: 16px;
+  background-color: #fec261;
 }
 
 @media screen and (max-height: 450px) {

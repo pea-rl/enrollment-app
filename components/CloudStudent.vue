@@ -90,17 +90,17 @@
 </template>
 
 <script>
-const url = 'http://localhost:3001/local_student_data';
+const url = 'http://localhost:3002/cloud_student_data';
 export default {
   data: function () {
     return {
-      item: { name: "", course: "", year: "", section: "", edit: false },
+      item: { id: 0, name: "", course: "", year: "", section: "", edit: false },
       items: [],
     };
   },
   methods: {
     async addItem() {
-      await this.$axios.$post(url + '/insert', {name: this.item.name, course: this.item.course, year: this.item.year, section: this.item.section})
+      await this.$axios.$post(url + '/insert', this.item)
       .then((res) => {
         console.log(res);
         this.item = { name: "", course: "", year: "", section: "", edit: false };
@@ -124,6 +124,7 @@ export default {
         this.items = res;
       })
       .catch((err) => console.log(err));
+      await this.GetCurrentID();
     },
     async ItemEdit(item){
       if(!item.edit)
@@ -140,6 +141,9 @@ export default {
 
         await this.GetAllRecords();
       }
+    },
+    async GetCurrentID(){
+      this.item.id = Math.max.apply(Math, this.items.map(function(o) { return o.id; })) + 1;
     }
   },
   async mounted() {
