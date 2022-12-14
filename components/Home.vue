@@ -1,9 +1,5 @@
 <template>
-  
   <div class="body">
-    
-    <sidebar/>
-
     <h2 class="title">Home Page</h2>
     <div class="center"  >
       <div class="card cardhome">
@@ -13,8 +9,9 @@
           <p class="card-text text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
-    </div>
+    </div>    
   </div>
+
 </template>
 
 <script>
@@ -28,8 +25,6 @@ export default {
 <style>
 .body {
   background-color: #fec261;
-  width: 100%;
-  height: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
 }

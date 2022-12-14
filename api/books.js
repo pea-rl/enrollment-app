@@ -18,6 +18,11 @@ let books = [
 
 module.exports = router;
 
+router.get('/', (ctx, next) => {
+	ctx.body = books;
+	next();
+})
+
 // books.js
 //GET Request
 router.get('/:id', (ctx, next) => {
