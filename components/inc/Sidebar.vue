@@ -15,7 +15,7 @@
           <NuxtLink to="/cloudstudent" class="nav-link">Cloud Student List</NuxtLink>
         </li>
         <li class="nav-item" @click="isActive = !isActive">
-          <NuxtLink to="/" class="nav-link">Logout</NuxtLink>
+          <NuxtLink to="/login" class="nav-link">Logout</NuxtLink>
         </li>
       </ul>
     </div>
@@ -23,7 +23,7 @@
     <div id="main" :class="{ pushMainContent: isActive }">
       <span
         style="font-size: 30px; cursor: pointer; color: #06283d"
-        @click="isActive = !isActive">&#9776; Dashboard</span>
+        @click="isActive = !isActive">&#9776; Menu</span>
     </div>
   </div>
 </template>

@@ -4,7 +4,8 @@
 
 <script>
 export default {
-  layout: 'nonav'
+  layout: 'nonav',
+  name: 'login'
 }
 </script>
 

@@ -19,12 +19,12 @@
             <!--Email-->
             <div class="floating-label">
               <input
-                v-model="txtEmail"
+                v-model="txtEmail" :state="CheckEmail"
                 type="email"
                 class="floating-label__input"
                 id="Email"
                 placeholder="Email"
-                required
+                required="Email"
               />
               <label for="floatingInput" class="floating-label__label">
                 Email</label
@@ -35,8 +35,8 @@
           <div class="mb-3 form-check">
             <div class="floating-label">
               <input
-                v-model="txtPassword"
-                type="password"
+                v-model="txtPassword" :state="CheckPasswrd"
+                type="password" 
                 class="floating-label__input"
                 id="Password"
                 placeholder="Password" required="Password"
@@ -60,10 +60,10 @@
   </div>
 </template>
 
-<script >
+<script>
 export default {
-  layout: 'nonav',
   name: 'Login',
+  layout: 'nonav',
   data() {
     return {
       email: "",
@@ -75,13 +75,13 @@ export default {
       let mssg = "";
       let ttl = "";
       let vrnt = "";
-      if(this.txtEmail == "" || this.txtPasssword == "") {
+      if(this.txtEmail == "" || this.txtPassword == "") {
         mssg = "Please fill all fields";
         ttl = "Missing fields";
         vrnt = "error";
       }
       else {
-        mssg = "Email: " + this.txtEmail + "\r\nPassword: " +this.txtPasssword + "\r\nHello!";
+        mssg = "Email: " + this.txtEmail + "\r\nPassword: " +this.txtPassword + "\r\nHello!";
         ttl = "Success";
         vrnt = "Success";
         this.ClearField()
@@ -100,7 +100,7 @@ export default {
   },
   computed: {
     CheckEmail() {
-      if(this.txtEmail.length == 0){
+      if(this.txtEmail == 0){
         return null;
       }
       return this.txtEmail.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) ? true:false;
