@@ -3,13 +3,14 @@ const Router = require('koa-router');
 const router = new Router({
     prefix: "/local_student_data"
 });
-let id = 1000;
+let id = 100;
 let student = [
     {id: id++, name: "Irish Pearl Sumicad", course: "BSIT", year: "4", section: "A", edit: false},
-    {id: id++, name: "Angelien Domex", course: "BSIT", year: "4", section: "A", edit: false},
-    {id: id++, name: "Kimberly Baga", course: "BSIT", year: "4", section: "A", edit: false},
+    {id: id++, name: "Gavin Delos Reyes", course: "BSIT", year: "4", section: "A", edit: false},
+    {id: id++, name: "Isabel Dizon", course: "BSBA", year: "4", section: "A", edit: false},
 ];
 
+//all students data
 router.get(('/'), (ctx, next) => {
     ctx.body = student;
     console.log("Get All Student Data");

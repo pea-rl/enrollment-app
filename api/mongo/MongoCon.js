@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb")
 
-const conUrl = ''; //Insert connection url between quotes
+const conUrl = 'mongodb+srv://irish:test@ap6-project.ajedt17.mongodb.net/test';
 
 const client = new MongoClient(conUrl, {
     useNewUrlParser: true,

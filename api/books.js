@@ -14,8 +14,6 @@ let books = [
 	{ id: 101, name: 'Into The Wild', author: 'John Krakauer' }
 ];
 
-// Routes will go here
-
 module.exports = router;
 
 router.get('/', (ctx, next) => {

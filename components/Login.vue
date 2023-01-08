@@ -39,8 +39,7 @@
                 type="password"
                 class="floating-label__input"
                 id="Password"
-                placeholder="Password"
-                required
+                placeholder="Password" required="Password"
               />
               <label for="floatingInput" class="floating-label__label">
                 Password</label
@@ -61,9 +60,10 @@
   </div>
 </template>
 
-<script>
+<script >
 export default {
-  //name: 'Login'
+  layout: 'nonav',
+  name: 'Login',
   data() {
     return {
       email: "",

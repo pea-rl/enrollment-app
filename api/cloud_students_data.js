@@ -5,7 +5,7 @@ const router = new Router({
     prefix: '/cloud_student_data'
 });
 
-//Get All Documens from Account Collection
+//Get All Documens from Student Collection
 router.get('/', async (ctx, next) => {
     ctx.body = await GetAllStudent();
     console.log("Get All Student Data")
@@ -35,7 +35,7 @@ router.post('/insert', async (ctx, next) => {
 
 //Update Document
 router.post('/update', async (ctx, next) => {
-    if(!ctx.request.body.id || !ctx.request.body.name || !ctx.request.body.course || !ctx.request.body.year || !ctx.request.body.section)
+    if(!ctx.request.body.id && !ctx.request.body.name && !ctx.request.body.course && !ctx.request.body.year && !ctx.request.body.section)
     {
         ctx.response.status = 404;
         ctx.body = "Missing Fields";

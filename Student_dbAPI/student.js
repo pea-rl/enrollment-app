@@ -6,7 +6,9 @@ const router = new Router({
 
 //let id = 1;
 let students = [
-  {name: "Sumicad", course: "BSIT", year: "4", section: "A", edit: false}
+  {name: "Sumicad", course: "BSIT", year: "4", section: "A", edit: false},
+  {name: "Delos Reyes", course: "BSIT", year: "4", section: "A", edit: false},
+  {name: "Matthews", course: "BSIT", year: "4", section: "A", edit: false}
 ];
 
 router.get('/', (ctx, next) => {

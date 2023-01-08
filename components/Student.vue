@@ -18,7 +18,6 @@
           class="form-control"
           v-on:keyup.enter="addItem"
           style="width: 300px"/>
-          style="width: 360px"/>
         <input
           type="text"
           v-model="item.year"
@@ -99,11 +98,12 @@
 
 <script>
 const url = 'http://localhost:3001/local_student_data';
+
 export default {
   data: function () {
     return {
       item: { name: "", course: "", year: "", section: "", edit: false },
-      items: []
+      items: [],
     };
   },
   methods: {

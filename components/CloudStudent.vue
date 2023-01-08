@@ -42,7 +42,7 @@
           <th style="background-color: #06283d; color: #d8e4e9;">Section</th>
           <th class="col-2" style="background-color: #06283d; color: #d8e4e9;">Edit/Del</th>
         </thead>
-        <tr v-for="(item, index) in items" :key="item.name">
+        <tr v-for="(item) in items" :key="item.name">
           <td>
             <input
               v-if="item.edit"
@@ -103,7 +103,7 @@ export default {
       await this.$axios.$post(url + '/insert', this.item)
       .then((res) => {
         console.log(res);
-        this.item = { name: "", course: "", year: "", section: "", edit: false };
+        this.item = { id: "", name: "", course: "", year: "", section: "", edit: false };
       })
       .catch((err) => console.log(err.response.data));
       await this.GetAllRecords();

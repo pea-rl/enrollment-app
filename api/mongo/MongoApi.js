@@ -1,5 +1,7 @@
 const Router = require('koa-router');
-const student = require('./MongoCon').db('Enrollment').collection('Student'); // Change or Not the Database and Collection Name
+const student = require('./MongoCon').db('StudentDB').collection('Student'); 
+// Change or Not the Database and Collection Name
+
 
 const router = new Router({
     prefix: '/cloud_student_data'
