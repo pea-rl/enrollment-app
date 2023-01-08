@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb")
 
-const conUrl = 'mongodb+srv://irish:test@ap6-project.ajedt17.mongodb.net/test';
+const conUrl = ''; //replace mongodb connection 
 
 const client = new MongoClient(conUrl, {
     useNewUrlParser: true,
