@@ -96,7 +96,7 @@
   </div>
 </template>
 
-<script>
+<script >
 const url = 'http://localhost:3001/local_student_data';
 
 export default {
