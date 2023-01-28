@@ -48,10 +48,8 @@
           </div>
           <!--Login Button-->
           <div class="center">
-            <NuxtLink to="/home" class="nav-link">
-              <button @click="loginClck" type="submit" class="btnLogin">
-                LOGIN
-              </button>
+            <NuxtLink to="/Home" class="nav-link btnLogin" id="Login" style="text-align: center;">
+            LOGIN
             </NuxtLink>
           </div>
         </div>
@@ -66,8 +64,8 @@ export default {
   layout: 'nonav',
   data() {
     return {
-      email: "",
-      password: "",
+      txtEmail: "",
+      txtPassword: "",
     };
   },
   methods: {

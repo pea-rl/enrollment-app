@@ -89,7 +89,7 @@
   </div>
 </template>
 
-<script>
+<script >
 const url = 'http://localhost:3002/cloud_student_data';
 export default {
   data: function () {

@@ -37,7 +37,7 @@
       </div>
 
       <br /><br />
-      <table class="table table-striped table-bordered table-sm tablerows" style="border: 0px; font-size: 13px;">
+      <table id="studentTable" class="table table-striped table-bordered table-sm tablerows" style="border: 0px; font-size: 13px;">
         <thead class="thead-light">
           <th style="background-color: #06283d; color: #d8e4e9; width: 300px;">Name</th>
           <th style="background-color: #06283d; color: #d8e4e9; width: 300px;">Course</th>
@@ -47,18 +47,18 @@
         </thead>
         <tr v-for="(item) in items" :key="item.name">
           <td>
-            <input
+            <input 
+            type="text" id="Name"
               v-if="item.edit"
-              type="text"
               v-model="item.name"
               v-on:keyup.enter="item.edit = !item.edit"
               style="width: 300px"/>
             <span v-else>{{ item.name }} </span>
           </td>
           <td>
-            <input
+            <input 
+            type="text" id="Course"
               v-if="item.edit"
-              type="text"
               v-model="item.course"
               v-on:keyup.enter="item.edit = !item.edit"
               style="width: 300px"/>
@@ -66,8 +66,8 @@
           </td>
           <td>
             <input
+            type="text" id="Year"
               v-if="item.edit"
-              type="text"
               v-model="item.year"
               v-on:keyup.enter="item.edit = !item.edit"
               style="width: 40px"/>
@@ -75,18 +75,18 @@
           </td>
           <td>
             <input
+            type="text" id="Section"
               v-if="item.edit"
-              type="text"
               v-model="item.section"
               v-on:keyup.enter="item.edit = !item.edit"
               style="width: 50px"/>
             <span v-else>{{ item.section }} </span>
           </td>
           <td>
-            <button @click="ItemEdit(item)" class="imgbtn">
+            <button @click="ItemEdit(item)" id="itemEdit" class="imgbtn">
               <img src="~/static/images/edit.png" class="imgbtn" />
             </button>
-            <button @click="removeItem(item)" class="imgbtn">
+            <button @click="removeItem(item)" id="removeItem" class="imgbtn">
               <img src="~/static/images/delete.png" class="imgbtn" />
             </button>
           </td>
